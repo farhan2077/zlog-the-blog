@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')  %>
+
+<body class="font-custom bg-gray-900">
+    <!-- container start -->
+    <div class="md:container md:mx-auto p-10">
+        <!-- navbar start -->
+        <%- include('../partials/navbar.ejs')  %>
+        <!-- navbar end -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-white mt-4">
+            <div
+                class="bg-gray-700 rounded-lg border-solid border-2 border-gray-700 hover:border-gray-100 p-8 overflow-hidden transition duration-150 ease-in-out">
+                <h3 class="text-white text-3xl font-bold w-full"><%= blog.title %></h3>
+                <h6 class="text-gray-500 text-sm -mt-1">Farhan ⋅ <%= blog.createdAt.toDateString() %></h6>
+                <p class="text-gray-300 text-lg hover:text-gray-100 mt-2 mb-8"><%= blog.body %></p>
+                <a class="delete cursor-pointer" data-doc="<%= blog._id %>" >
+                    <div class="bg-gray-800 inline-block p-2 rounded-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <script>
+        const trashcan = document.querySelector('a.delete');
+
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE',
+            })
+                // at first JSON can't be readily use, thus response.json() method is used
+                //  which returns another promise into an actual JSON
+                .then(response => response.json())
+                // the other promise
+                .then(data => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+        });
+    </script>
+</body>
+
+</html>
