@@ -1,19 +1,42 @@
-<div class="bg-gray-700 text-white px-3 py-2 rounded-lg -mt-6 text-sm md:text-lg font-nav">
-    <div class="flex items-center justify-between flex-col md:flex-row text-white px-3 py-2">
-        <a href="/">
-            <div class="flex items-center justify-between text-white px-3 py-2">
-                <div>
-                    <div>
-                        <svg class="fill-current h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                </div>
-                <div class="pl-3">Zlog</div>
-            </div>
-        </a>
-        <div class="mt-3 md:mt-0">
-            <a href="/" class="hover:bg-gray-800 rounded-lg px-3 py-1">Blogs</a>
-            <a href="/about" class="hover:bg-gray-800 rounded-lg px-3 py-1">About</a>
-            <a href="/blogs/create" class="hover:bg-gray-800 rounded-lg px-3 py-1">Create</a>
+<nav class="flex items-center flex-wrap text-blue-800 mt-5 mb-6">
+    <a href="/" class="inline-flex items-center">
+        <svg class="fill-current h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        <span class="text-2xl font-bold tracking-wide ml-1">Zlog</span>
+    </a>
+    <button onclick="navToggler()" class="text-blue-800 inline-flex lg:hidden ml-auto">
+        <svg class="h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+    </button>
+    <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navItems">
+        <div
+            class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+            <a href="/" class="lg:inline-flex lg:w-auto w-full mr-2 mt-3 md:mt-0 border border-white text-blue-600 hover:text-blue-900">
+                <span>Blogs</span>
+            </a>
+            <a href="/blogs/create" class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-600 hover:text-blue-900">
+                <span>Create</span>
+            </a>
+            <a href="/login" class="lg:inline-flex lg:w-auto w-full mx-0 md:mx-2 border border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-600 hover:text-blue-900">
+                <span>Login</span>
+            </a>
+            <a href="/signup" class="lg:inline-flex lg:w-auto w-full ml-0 md:ml-2 border border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-600 bg-white md:bg-blue-200 hover:text-blue-900">
+                <span>Sign up</span>
+            </a>
         </div>
     </div>
-</div>
+</nav>
+
+<script>
+    function navToggler() {
+        var x = document.getElementById("navItems");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>

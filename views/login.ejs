@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')  %>
+    <style>
+    .custom-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+    </style>
+</head>
+<body class="font-inter custom-container -mt-16 bg-gray-100 md:bg-white">
+    <main class="bg-gray-100 p-0 md:px-20 md:py-12 rounded-lg">
+        <a href="/" class="flex text-center justify-evenly">
+            <div class="flex items-center text-blue-900">
+                <svg class="fill-current h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span class="text-2xl font-bold tracking-wide ml-1">Zlog</span>
+            </div>
+        </a>
+        <p class="text-3xl text-center mt-8 mb-8 text-blue-600">Login</p>
+        <form action="">
+            <!-- <label class="block">
+                <span class="text-gray-600 text-sm">Username:</span>
+                <input class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter an unique username">
+            </label>
+            <p class="text-red-600 mt-1 "></p> -->
+            <label class="block  mt-5">
+                <span class="text-gray-600 text-sm">Email:</span>
+                <input class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter your email">
+            </label>
+            <p class="text-red-600 mt-1 "></p>
+            <label class="block mt-5">
+                <span class="text-gray-600 text-sm">Password:</span>
+                <input class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter password">
+            </label>
+            <p class="text-red-600"></p>
+            <button class="mt-8 border-2 border-blue-200 text-center w-full rounded px-4 py-2 text-blue-700 bg-blue-200 hover:text-blue-900 hover:border-blue-600">
+                Log in
+            </button>
+        </form>
+        <p class="text-gray-600 mt-2">Don't have an account? <a href="/signup" class="text-blue-600 hover:text-blue-900">Create one here.</a></p>
+    </main>
+</body>
+</html>
