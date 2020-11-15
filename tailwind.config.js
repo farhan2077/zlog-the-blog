@@ -3,7 +3,12 @@ module.exports = {
         removeDeprecatedGapUtilities: true,
         purgeLayersByDefault: true,
     },
-    purge: [],
+    purge: {
+        enabled: true,
+        content: [
+            './views/**/*.ejs'
+        ],
+    },
     theme: {
         extend: {
             fontFamily: {

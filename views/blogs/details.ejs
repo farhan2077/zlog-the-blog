@@ -8,20 +8,6 @@
         <!-- navbar start -->
         <%- include('../partials/navbar.ejs')  %>
         <!-- navbar end -->
-        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-white mt-4">
-            <div
-                class="bg-gray-700 rounded-lg border-solid border-2 border-gray-700 hover:border-gray-100 p-8 overflow-hidden">
-                <h3 class="text-white text-3xl font-bold w-full"><%= blog.title %></h3>
-                <h6 class="text-gray-500 text-sm -mt-1">Farhan ⋅ <%= blog.createdAt.toDateString() %></h6>
-                <p class="text-gray-300 text-lg hover:text-gray-100 mt-2 mb-8"><%= blog.body %></p>
-                <a class="delete cursor-pointer" data-doc="<%= blog._id %>" >
-                    <div class="bg-gray-800 inline-block p-2 rounded-lg">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                    </div>
-                </a>
-            </div>
-        </div> -->
-
         <section>
             <p class="text-gray-600 mt-1 md:mt-6 text-center"><%= blog.createdAt.toDateString() %></p>
             <h1 class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-900 tracking-tight text-center leading-tight"><%= blog.title %></h1> 
@@ -29,7 +15,9 @@
             <div class="flex flex-col md:flex-row mt-0 md:mt-10">
                 <div class="w-full md:w-1/4">
                     <p class="text-blue-600 text-center md:text-left">@username</p>
-                    <hr class="mt-2 mb-0 invisible md:visible md:mt-10 md:mb-10 mr-8 ">
+
+                    <!-- new features to be added -->
+                    <!-- <hr class="mt-2 mb-0 invisible md:visible md:mt-10 md:mb-10 mr-8 ">
                     <div class="mr-0 md:mr-8 text-center md:text-left">
                         <button class="mr-2 border text-sm md:text-base rounded px-2 py-1 border-blue-200 hover:bg-blue-200 text-blue-600 hover:text-blue-900">
                             <a href="" class="md:visible flex items-center">
@@ -47,9 +35,9 @@
                                 Delete
                             </a>
                         </button>
-                    </div>
+                    </div> -->
                     <hr class="mt-8 -mb-4 mr-0 md:mt-10 md:mb-10 md:mr-8 ">
-                    <a href="" class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <a href="/" class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
                         <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
@@ -60,12 +48,12 @@
                     <p class="text-gray-600 mt-4 leading-relaxed text-">
                         <%= blog.body %>
                     </p>
-                    <a href="/" class="md:visible mt-3 md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
+                    <!-- <a href="/" class="md:visible mt-3 md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
                         <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                         Back to home
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </section>
@@ -81,7 +69,7 @@
             fetch(endpoint, {
                 method: 'DELETE',
             })
-                // at first JSON can't be readily use, thus response.json() method is used
+                // at first JSON can't be readily used, thus response.json() method is used
                 //  which returns another promise into an actual JSON
                 .then(response => response.json())
                 // the other promise

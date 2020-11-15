@@ -24,23 +24,23 @@
                 <span class="text-2xl font-bold tracking-wide ml-1">Zlog</span>
             </div>
         </a>
-        <p class="text-3xl text-center mt-8 mb-8 text-blue-600">Login</p>
-        <form action="">
-            <!-- <label class="block">
+        <p class="text-3xl text-center mt-8 mb-8 text-blue-600">Log in</p>
+        <form action="/signup">
+            <!-- <label class="block" for="username">
                 <span class="text-gray-600 text-sm">Username:</span>
-                <input class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter an unique username">
+                <input type="text" name="username" class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter an unique username">
             </label>
             <p class="text-red-600 mt-1 "></p> -->
-            <label class="block  mt-5">
+            <label class="block mt-5" for="email">
                 <span class="text-gray-600 text-sm">Email:</span>
-                <input class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter your email">
+                <input type="text" name="email" class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter your email">
             </label>
-            <p class="text-red-600 mt-1 "></p>
-            <label class="block mt-5">
+            <p class="email error text-red-600 mt-1"></p>
+            <label class="block mt-5" for="password">
                 <span class="text-gray-600 text-sm">Password:</span>
-                <input class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter password">
+                <input type="password" name="password" class="form-input mt-1 block w-84 appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 text-gray-600" placeholder="Enter password">
             </label>
-            <p class="text-red-600"></p>
+            <p class="password error text-red-600 mt-1"></p>
             <button class="mt-8 border-2 border-blue-200 text-center w-full rounded px-4 py-2 text-blue-700 bg-blue-200 hover:text-blue-900 hover:border-blue-600">
                 Log in
             </button>
@@ -48,4 +48,41 @@
         <p class="text-gray-600 mt-2">Don't have an account? <a href="/signup" class="text-blue-600 hover:text-blue-900">Create one here.</a></p>
     </main>
 </body>
+<script>
+    const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // reset errors
+        emailError.textContent = "";
+        passwordError.textContent = "";
+
+        // get values
+        const email = form.email.value;
+        const password = form.password.value;
+
+        try {
+            const res = await fetch('/login', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            const data = await res.json()
+            console.log(data);
+            if (data.errors) {
+                emailError.textContent = data.errors.email;
+                passwordError.textContent = data.errors.password;
+            }
+            if (data.user) {
+                location.assign('/')
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    });  
+</script>
 </html>

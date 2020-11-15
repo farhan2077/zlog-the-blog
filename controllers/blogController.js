@@ -1,4 +1,6 @@
+const { Mongoose } = require("mongoose");
 const Blog = require("../models/blog");
+const User = require("../models/User");
 
 // blog_index - get all blogs and inject it into index views
 const blog_index = (req, res) => {

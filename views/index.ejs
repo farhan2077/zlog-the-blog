@@ -10,32 +10,6 @@
         <h1 class="font-bold text-3xl md:text-6xl text-blue-900 tracking-tight">Latest</h1> 
         <p class="text-lg text-gray-600">All the latest blogs about anything in one place. <a href="/blogs/create" class="text-blue-600 hover:text-blue-900">Create one</a> right now.</p> 
 
-        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-white mt-4">
-            <% if (blogs.length > 0) {%>
-            <% blogs.forEach(blog => { %>
-            <div
-                class="bg-gray-700 rounded-lg border-solid border-2 border-gray-700 hover:border-gray-100 p-8 overflow-hidden">
-                <h3 class="text-white text-3xl font-bold w-full"><%= blog.title %></h3>
-                <h6 class="text-gray-500 text-sm -mt-1">Farhan ⋅ <%= blog.createdAt.toDateString() %></h6>
-                <p class="text-gray-300 text-lg hover:text-gray-100 mt-2 mb-6"><%= blog.body %></p>
-                <a href="/blogs/<%= blog._id %>">
-                    <div class="p-2 mt-2 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg flex lg:inline-flex"
-                        role="alert">
-                        <span class="font-bold text-left flex-auto">Read more</span>
-                        <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20">
-                            <path
-                                d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-                            </svg>
-                    </div>
-                </a>
-            </div>
-            <% }) %>
-            <% } else { %>
-            <p>Such Empty...</p>
-            <% } %>
-        </div> -->
-
         <section>
             <% if (blogs.length > 0) {%>
             <% blogs.forEach(blog => { %>
@@ -59,7 +33,7 @@
         </section>
         <% }) %>
         <% } else { %>
-        <p>Such Empty...</p>
+        <p class="text-gray-600 text-center">Such Empty...</p>
         <% } %>
         <%- include('./partials/footer.ejs') %>
     </div>
