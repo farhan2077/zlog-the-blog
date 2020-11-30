@@ -5,9 +5,7 @@ module.exports = {
     },
     purge: {
         enabled: true,
-        content: [
-            './views/**/*.ejs'
-        ],
+        content: ["./views/**/*.ejs"],
     },
     theme: {
         extend: {

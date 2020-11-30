@@ -1,6 +1,5 @@
 const { Mongoose } = require("mongoose");
 const Blog = require("../models/blog");
-// const User = require("../models/User");
 
 // blog_index - get all blogs and inject it into index views
 const blog_index = (req, res) => {
@@ -17,7 +16,6 @@ const blog_index = (req, res) => {
 // blog_details
 const blog_details = (req, res) => {
     const id = req.params.id;
-    // console.log(id);
     Blog.findById(id)
         .then((result) => {
             res.render("blogs/details", {
@@ -35,9 +33,9 @@ const blog_create_get = (req, res) => {
     res.render("blogs/create", { title: "Create New Blog" });
 };
 
-// blog_create_post - add the new blog - DESTRUCTURED 
+// blog_create_post - add the new blog - DESTRUCTURED
 const blog_create_post = (req, res) => {
-    //     const blog = new Blog(req.body);
+    // const blog = new Blog(req.body);
     const blog = new Blog({ title: req.body.title, body: req.body.body });
     blog.save()
         .then((result) => {

@@ -1,8 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv').config()
+const cookieParser = require("cookie-parser");
+const dotenv = require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // mongodb
-    const dbURI = process.env.MONGODB_URI;
-    mongoose
+const dbURI = process.env.MONGODB_URI;
+mongoose
     .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => app.listen(PORT))
     .catch((err) => console.log(err));
@@ -40,7 +40,7 @@ app.get("/about", (req, res) => {
 });
 
 // login logout route
-app.get('*', checkUser);
+app.get("*", checkUser);
 app.use(authRoutes);
 
 // blog routes

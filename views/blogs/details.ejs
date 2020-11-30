@@ -10,7 +10,9 @@
         <!-- navbar end -->
         <section>
             <p class="text-gray-600 mt-1 md:mt-6 text-center"><%= blog.createdAt.toDateString() %></p>
-            <h1 class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-900 tracking-tight text-center leading-tight"><%= blog.title %></h1> 
+            <h1
+                class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-900 tracking-tight text-center leading-tight">
+                <%= blog.title %></h1>
             <hr class="mt-1 md:mt-10 md:mb-10 invisible md:visible">
             <div class="flex flex-col md:flex-row mt-0 md:mt-10">
                 <div class="w-full md:w-1/4">
@@ -37,9 +39,12 @@
                         </button>
                     </div> -->
                     <hr class="mt-8 -mb-4 mr-0 md:mt-10 md:mb-10 md:mr-8 ">
-                    <a href="/" class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
-                        <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    <a href="/"
+                        class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
+                        <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                         Back to home
                     </a>
@@ -62,15 +67,12 @@
 
     <script>
         const trashcan = document.querySelector('a.delete');
-
         trashcan.addEventListener('click', (e) => {
             const endpoint = `/blogs/${trashcan.dataset.doc}`;
-
             fetch(endpoint, {
                 method: 'DELETE',
             })
-                // at first JSON can't be readily used, thus response.json() method is used
-                //  which returns another promise into an actual JSON
+                // at first JSON can't be readily used, thus response.json() method is used which returns another promise into an actual JSON
                 .then(response => response.json())
                 // the other promise
                 .then(data => window.location.href = data.redirect)

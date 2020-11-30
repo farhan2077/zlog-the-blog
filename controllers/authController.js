@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const dotenv = require('dotenv').config()
+const dotenv = require("dotenv").config();
 
 // handle errors
 const handleErrors = (err) => {
@@ -25,14 +25,10 @@ const handleErrors = (err) => {
 
     // validation errors
     if (err.message.includes("user validation failed")) {
-        // console.log(err);
         Object.values(err.errors).forEach(({ properties }) => {
-            // console.log(val);
-            // console.log(properties);
             errors[properties.path] = properties.message;
         });
     }
-
     return errors;
 };
 
@@ -46,7 +42,7 @@ const createToken = (id) => {
 
 // controller actions
 module.exports.signup_get = (req, res) => {
-    res.render("signup", { title: "Sign up", });
+    res.render("signup", { title: "Sign up" });
 };
 
 module.exports.login_get = (req, res) => {
@@ -55,7 +51,6 @@ module.exports.login_get = (req, res) => {
 
 module.exports.signup_post = async (req, res) => {
     const { email, password } = req.body;
-
     try {
         const user = await User.create({ email, password });
         const token = createToken(user._id);
@@ -69,7 +64,6 @@ module.exports.signup_post = async (req, res) => {
 
 module.exports.login_post = async (req, res) => {
     const { email, password } = req.body;
-
     try {
         const user = await User.login(email, password);
         const token = createToken(user._id);

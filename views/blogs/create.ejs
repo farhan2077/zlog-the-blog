@@ -9,36 +9,45 @@
         <%- include('../partials/navbar.ejs')  %>
         <!-- navbar end -->
         <section>
-            <h1 class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-900 tracking-tight leading-tight">Create blog</h1>
+            <h1 class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-900 tracking-tight leading-tight">Create
+                blog</h1>
             <hr class="mt-1 md:mt-10 md:mb-10 invisible md:visible">
             <div class="flex flex-col md:flex-row mt-0 md:mt-10">
                 <div class="w-full md:w-1/4">
                     <p class="text-blue-600 mt-5 md:mt-0">@username</p>
                     <hr class="mt-2 mb-0 invisible md:visible md:mt-10 md:mb-10 mr-8 ">
                     <p class="mr-0 md:mr-8 text-gray-600">
-                        Today is 
+                        Today is
                         <script> document.write(new Date().toDateString()); </script>
-                        <!-- <script> document.write(new Date().toLocaleDateString()); </script> --> 
-                    <p/>
-                    <hr class="mt-8 -mb-4 mr-0 md:mt-10 md:mb-10 md:mr-8 ">
-                    <a href="" class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
-                        <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                        Back to home
-                    </a>
+                        <!-- <script> document.write(new Date().toLocaleDateString()); </script> -->
+                        <p />
+                        <hr class="mt-8 -mb-4 mr-0 md:mt-10 md:mb-10 md:mr-8 ">
+                        <a href=""
+                            class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
+                            <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            Back to home
+                        </a>
                 </div>
                 <div class="2-full md:w-3/4 mt-4 md:-mt-4">
                     <form action="/blogs" method="POST">
                         <label class="block" for="title">
                             <span class="text-gray-600">Blog title:</span>
-                            <input type="text" id="title" name="title" required class="form-input mt-1 block w-full appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 placeholder-gray-400 text-gray-600" placeholder="Enter the title for the blog">
+                            <input type="text" id="title" name="title" required
+                                class="form-input mt-1 block w-full appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 placeholder-gray-400 text-gray-600"
+                                placeholder="Enter the title for the blog">
                         </label>
                         <label class="block mt-6" for="body">
                             <span class="text-gray-600">Blog body:</span>
-                            <textarea type="text" id="body" name="body" required class="form-input mt-1 block w-full appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 h-64 placeholder-gray-400 text-gray-600" placeholder="Write about the blog here"></textarea>
+                            <textarea type="text" id="body" name="body" required
+                                class="form-input mt-1 block w-full appearance-none border-2 border-blue-200 focus:border-blue-600 focus:outline-none rounded p-2 h-64 placeholder-gray-400 text-gray-600"
+                                placeholder="Write about the blog here"></textarea>
                         </label>
-                        <button class="mt-10 border-2 border-blue-200 rounded px-6 py-2 text-blue-700 bg-blue-200 hover:text-blue-900 hover:border-blue-600">
+                        <button
+                            class="mt-10 border-2 border-blue-200 rounded px-6 py-2 text-blue-700 bg-blue-200 hover:text-blue-900 hover:border-blue-600">
                             Submit
                         </button>
                     </form>

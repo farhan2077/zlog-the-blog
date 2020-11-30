@@ -1,28 +1,28 @@
 {
-  "name": "node_blog_test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js",
-    "buildcss": "tailwindcss build src_styles.css -o public/styles.css"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "cookie-parser": "^1.4.5",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.12",
-    "morgan": "^1.10.0",
-    "tailwindcss": "^1.9.6",
-    "validator": "^13.1.17"
-  },
-  "engines": {
-    "node": "14.15.0"
-  }
+    "name": "node_blog_test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node app.js",
+        "buildcss": "tailwindcss build src_styles.css -o public/styles.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "cookie-parser": "^1.4.5",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.10.12",
+        "morgan": "^1.10.0",
+        "tailwindcss": "^1.9.6",
+        "validator": "^13.1.17"
+    },
+    "engines": {
+        "node": "14.15.0"
+    }
 }
