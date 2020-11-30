@@ -1,3 +1,2 @@
 node_modules
-tailwind.config.js
-src_styles.css
+.env
