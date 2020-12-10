@@ -15,6 +15,7 @@ npm install
 Add MongoDB token and JWT secret key. Create a `.env` file in the root directory and paste the following codes with the required values (without backticks)
 
 ```
+PORT = `in whatever port you want to run`
 MONGODB_URI = `Your MongoDb URI`
-SECRET_KEY = `Your secret toekn for JWT`
+SECRET_KEY = `Your secret token for JWT`
 ```
