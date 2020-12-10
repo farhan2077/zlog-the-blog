@@ -2,7 +2,6 @@
 
 A simple blog implemented using `MongoDB`, `Express` and `Node.js` following MVC approach. Try out the <a href="https://nodeblogzlog.herokuapp.com/">live site</a> right now.
 
-[![Heroku App Status](https://heroku-shields.herokuapp.com/nodeblogzlog)](https://nodeblogzlog.herokuapp.com)
 [![GitHub issues](https://img.shields.io/github/issues/farhan2077/node-blog-test)](https://github.com/farhan2077/node_blog_test/issues)
 
 ## 🛠 Installation & setup
