@@ -4,13 +4,13 @@
 
 <body class="font-inter">
     <!-- container start -->
-    <div class="md:container mx-auto px-5 md:px-32">
+    <div class="md:container mx-auto px-5 md:px-60">
         <!-- navbar start -->
         <%- include('./partials/navbar.ejs')  %>
         <!-- navbar end -->
-        <h1 class="font-bold text-3xl md:text-6xl text-blue-900 tracking-tight">Latest</h1>
-        <p class="text-lg text-gray-600">All the latest blogs about anything in one place. <a href="/blogs/create"
-                class="text-blue-600 hover:text-blue-900">Create one</a> right now.</p>
+        <h1 class="font-bold text-3xl md:text-6xl text-blue-900 tracking-tight mt-0 md:mt-10">Latest</h1>
+        <p class="text-lg text-gray-600 mt-4">All the latest blogs about anything in one place. <a href="/blogs/create"
+                class="text-blue-500 hover:text-blue-800">Create one</a> right now.</p>
 
         <section>
             <% if (blogs.length > 0) {%>
@@ -18,14 +18,14 @@
             <hr class="mt-10 mb-10">
             <div class="flex flex-col md:flex-row">
                 <div class="w-full md:w-1/4">
-                    <p class="text-gray-900">@username</p>
-                    <p class="text-gray-600 mt-1 md:mt-6"><%= blog.createdAt.toDateString() %></p>
+                    <p class="text-blue-500">@username</p>
+                    <p class="text-gray-500 mt-1 md:mt-6"><%= blog.createdAt.toDateString() %></p>
                 </div>
                 <div class="2-full md:w-3/4 mt-4 md:-mt-1">
-                    <h4 class="text-2xl font-bold text-blue-900 tracking-tight"><%= blog.title %></h4>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-"><%= blog.body %></p>
+                    <h4 class="text-2xl font-bold text-blue-800 tracking-tight"><%= blog.title %></h4>
+                    <p class="text-gray-500 mt-4 leading-relaxed text-"><%= blog.body %></p>
                     <a href="/blogs/<%= blog._id %>"
-                        class="mt-4 text-blue-600 hover:text-blue-800 inline-flex items-center">
+                        class="mt-4 text-blue-500 hover:text-blue-800 inline-flex items-center">
                         Read more
                         <svg class="h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">

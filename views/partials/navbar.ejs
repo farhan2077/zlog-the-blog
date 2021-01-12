@@ -18,38 +18,38 @@
             <!-- if -->
             <% if (user) { %>
             <p href=""
-                class="cursor-default lg:inline-flex lg:w-auto w-full mr-2 mt-3 md:mt-0 border border-white text-blue-600 hover:text-blue-900">
+                class="cursor-default lg:inline-flex lg:w-auto w-full mr-2 mt-3 md:mt-0 border border-white text-blue-500 hover:text-blue-800">
                 <span class="">Hi, <span class="underline"><%= user.email %></span></span>
             </p>
             <a href="/"
-                class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-600 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-500 hover:text-blue-800">
                 <span>Blogs</span>
             </a>
             <a href="/blogs/create"
-                class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-600 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-500 hover:text-blue-800">
                 <span>Create</span>
             </a>
             <a href="/logout"
-                class="lg:inline-flex lg:w-auto w-full ml-0 md:ml-2 border border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-600 bg-white md:bg-blue-200 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full ml-0 md:ml-2 border-2 border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-500 bg-white md:bg-blue-200 hover:text-blue-800 md:hover:border-blue-600">
                 <span>Log out</span>
             </a>
 
             <!-- else -->
             <% } else { %>
             <a href="/"
-                class="lg:inline-flex lg:w-auto w-full mr-2 mt-3 md:mt-0 border border-white text-blue-600 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full mr-2 mt-3 md:mt-0 border border-white text-blue-500 hover:text-blue-800">
                 <span>Blogs</span>
             </a>
             <a href="/blogs/create"
-                class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-600 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full m-1 mx-0 md:mx-2 mt-2 md:mt-1 border border-white text-blue-500 hover:text-blue-800">
                 <span>Create</span>
             </a>
             <a href="/login"
-                class="lg:inline-flex lg:w-auto w-full mx-0 md:mx-2 border border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-600 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full mx-0 md:mx-2 border-2 border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-500 hover:text-blue-800 md:hover:border-blue-600">
                 <span>Login</span>
             </a>
             <a href="/signup"
-                class="lg:inline-flex lg:w-auto w-full ml-0 md:ml-2 border border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-600 bg-white md:bg-blue-200 hover:text-blue-900">
+                class="lg:inline-flex lg:w-auto w-full ml-0 md:ml-2 border-2 border-white md:border-blue-200 rounded m-1 md:py-1 md:px-3 text-blue-500 bg-white md:bg-blue-200 hover:text-blue-800  md:hover:border-blue-600">
                 <span>Sign up</span>
             </a>
             <% } %>

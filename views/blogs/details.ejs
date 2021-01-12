@@ -9,14 +9,14 @@
         <%- include('../partials/navbar.ejs')  %>
         <!-- navbar end -->
         <section>
-            <p class="text-gray-600 mt-1 md:mt-6 text-center"><%= blog.createdAt.toDateString() %></p>
+            <p class="text-gray-500 mt-1 md:mt-6 text-center"><%= blog.createdAt.toDateString() %></p>
             <h1
-                class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-900 tracking-tight text-center leading-tight">
+                class="font-bold text-3xl md:text-5xl mt-1 md:mt-2 text-blue-800 tracking-tight text-center leading-tight">
                 <%= blog.title %></h1>
             <hr class="mt-1 md:mt-10 md:mb-10 invisible md:visible">
             <div class="flex flex-col md:flex-row mt-0 md:mt-10">
                 <div class="w-full md:w-1/4">
-                    <p class="text-blue-600 text-center md:text-left">@username</p>
+                    <p class="text-blue-500 text-center md:text-left">@username</p>
 
                     <!-- new features to be added -->
                     <!-- <hr class="mt-2 mb-0 invisible md:visible md:mt-10 md:mb-10 mr-8 ">
@@ -40,7 +40,7 @@
                     </div> -->
                     <hr class="mt-8 -mb-4 mr-0 md:mt-10 md:mb-10 md:mr-8 ">
                     <a href="/"
-                        class="invisible md:visible md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
+                        class="invisible md:visible md:mt-6 text-blue-500 hover:text-blue-800 flex items-center">
                         <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="2-full md:w-3/4 mt-0 md:-mt-4">
-                    <p class="text-gray-600 mt-4 leading-relaxed text-">
+                    <p class="text-gray-500 mt-4 leading-relaxed text-">
                         <%= blog.body %>
                     </p>
                     <!-- <a href="/" class="md:visible mt-3 md:mt-6 text-blue-600 hover:text-blue-800 flex items-center">
